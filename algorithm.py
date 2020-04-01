@@ -48,21 +48,22 @@ def solve(unassigned,schedule,n):
 
     # 성공 기저 사례: unassigned가 한명도 없을 때
     if len(unassigned)==0:
-        print('time1:')
+        print('면접 시간표 안내 두둥')
+        print('1시:', end = '')
         print(schedule[0])
-        print('time2:')
+        print('2시:', end = '')
         print(schedule[1])
-        print('time3:')
+        print('3시:', end = '')
         print(schedule[2])
-        print('time4:')
+        print('4시:', end = '')
         print(schedule[3])
-        print('time5:')
+        print('5시:', end = '')
         print(schedule[4])
-        print('time6:')
+        print('6시:', end = '')
         print(schedule[5])
-        print('time7:')
+        print('7시:', end = '')
         print(schedule[6])
-        print('time8:')
+        print('8시:', end = '')
         print(schedule[7])
         return True
 
@@ -83,4 +84,4 @@ def solve(unassigned,schedule,n):
     return False
     
 
-solve([0,1,2,3,4,5,6,7,8,9,10],[[],[],[],[],[],[],[],[]],1)
+solve(['재은','수민','연석','혜수','민기','아영','혜정','지은','현정','현재','현아'],[[],[],[],[],[],[],[],[]],1)

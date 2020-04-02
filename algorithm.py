@@ -70,7 +70,7 @@ def solve(unassigned,schedule,n):
     interviewee = unassigned[-1] # popped interviewee 이름
     each = availability[n*-1]
     for time in range(8): # 각각 시간대에 대한 가능 여부
-        if each[time]==1 and len(schedule[time])<2: 
+        if each[time]==1 and len(schedule[time])<2: # 한 타임 당 두명만 볼 수 있다는 가정
             unassigned.pop()
             schedule[time].append(interviewee)
             if (solve(unassigned, schedule,n+1)):

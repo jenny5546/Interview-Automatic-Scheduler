@@ -30,23 +30,19 @@ def solve(unassigned,schedule,person):
         printer.printer(schedule)
         return True
 
-    for time in checked:
-        interviewee = unassigned[-1] 
-        print(interviewee)
-        if len(schedule[time])<12:
-            schedule[time].append(interviewee)
-            newS = schedule
-            unassigned.pop()
-            newU = unassigned
-            if (solve(newU, newS, person-1)==True):
-                schedule[time].append(interviewee)
-                unassigned.pop()
-                # print(schedule)
-                return True
-            
-            else:
-                continue
 
+    for time in checked:
+        if len(unassigned)!=0:
+            interviewee = unassigned.pop()
+            print(interviewee)
+            if len(schedule[time])<12:
+                # unassigned.pop()
+                schedule[time].append(interviewee)
+                if (solve(unassigned, schedule,person-1)):
+                    return True
+                else: 
+                    schedule[time].pop()
+                    unassigned.append(interviewee)
 
 
     return False
